@@ -1,0 +1,480 @@
+:root {
+    --primary-color: #006d77;
+    --secondary-color: #3b82f6;
+    --background-color: #f1f5f9;
+    --card-color: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --success-color: #10b981;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar for Larger Screens */
+.sidebar {
+    display: block; /* Show by default */
+    width: 250px;
+    background-color: var(--card-color);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Ensure sidebar appears above main content */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-right: 100%;
+    height: 3.5rem;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    margin-left: -1rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.nav-links {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+}
+
+.nav-links li:hover, .nav-links li.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-links li i {
+    margin-right: 0.75rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Account Widget Styles */
+.account-widget {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--card-color);
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar span {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.user-email {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Dashboard Content */
+.dashboard {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    margin-left: 250px; /* Offset for sidebar */
+}
+
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.balance-card {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.balance-card .label {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.balance-card .amount {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.balance-card .trend {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.trend.positive {
+    color: #4ade80;
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.action-buttons button {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-buttons button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Mobile Navigation Bar */
+.mobile-nav {
+    display: none; /* Hidden by default for larger screens */
+    background-color: var(--card-color);
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 200; /* Ensure mobile nav appears above main content */
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.mobile-nav-links {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: var(--card-color);
+    width: 100%;
+}
+
+.mobile-nav-links li {
+    border-top: 1px solid #ddd;
+}
+
+.mobile-nav-links a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.mobile-nav-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Mobile Account Widget */
+.mobile-account-widget {
+    display: none;
+    padding: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    background-color: var(--card-color);
+}
+
+@media (max-width: 768px) {
+    .mobile-nav {
+        display: block;
+    }
+
+    /* Hide Sidebar on Small Screens */
+    .sidebar {
+        display: none;
+    }
+
+    /* Adjust Main Content to Full Width */
+    .dashboard {
+        margin-left: 0;
+    }
+
+    .cards-grid, .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    /* Show Mobile Nav Links on Toggle */
+    .mobile-nav .mobile-nav-links.show {
+        display: flex;
+    }
+
+    /* Adjust Tips List and Button Width on Mobile */
+    .action-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .tips-list .tip-item {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .mobile-account-widget {
+        display: block;
+    }
+    
+    .account-widget {
+        display: none;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .mobile-nav-header {
+        padding: 0.5rem 0 0.5rem 0.5rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-nav-header a {
+        display: flex;
+        align-items: center;
+        gap: 0rem;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-nav-header .logo-img {
+        width: 13%;
+    }
+
+    .mobile-nav-header h1 {
+        font-size: 1.5rem;
+        color: var(--text-primary);
+    }
+}
+
+/* Pie Chart Container */
+.pie-chart-container {
+    flex-grow: 1;
+    width: 70%;
+    height: 70%;
+    padding-top: 20%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.pie-chart-container img {
+    width: 135%;
+}
+
+.pie-chart-container:hover {
+    transform: scale(1.1);
+}
+
+/* Tips List */
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.tip-item:hover {
+    background-color: var(--background-color);
+}
+
+.tip-item i:first-child {
+    font-size: 1.2rem;
+    width: 24px;
+    color: var(--primary-color);
+}
+
+.tip-item span {
+    flex: 1;
+}
+
+.tip-item i.fa-chevron-right {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Add to your existing action buttons styles */
+.create-group {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.create-group:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.create-group i {
+    font-size: 1rem;
+}

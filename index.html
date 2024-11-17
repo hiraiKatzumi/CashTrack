@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add modern fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Add icons -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>CashTrack</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+</head>
+<body>
+    <div class="container">
+        <!-- Mobile Navigation Bar -->
+        <nav class="mobile-nav">
+            <div class="mobile-nav-header">
+                <a href="/index.html">
+                    <img src="img/logo2.png" alt="Logo" class="logo-img">
+                    <h1>CashTrack</h1>
+                </a>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="budget/index.html"><i class="fas fa-chart-pie"></i> Budget</a></li>
+                <li><a href="rewards/index.html"><i class="fas fa-gift"></i> Rewards</a></li>
+                <li><a href="investing/index.html"><i class="fas fa-chart-line"></i> Investing & Education</a></li>
+                <li><a href="/investing/courses.html"><i class="fas fa-chart-line"></i> Courses</a></li>
+                <li><a href="splittrack/index.html"><i class="fas fa-calculator"></i> SplitTrack</a></li>
+            </ul>
+            <div class="mobile-account-widget">
+                <div class="account-info">
+                    <div class="avatar">
+                        <span>AK</span>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Alex Kim</p>
+                        <p class="user-email">alex.k@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar for larger screens -->
+        <nav class="sidebar">
+            <div class="logo">
+                <a href="/index.html">
+                    <img src="img/logo2.png" alt="Logo" class="logo-img">
+                    <h1>CashTrack</h1>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><i class="fas fa-home"></i><a href="index.html">Dashboard</a></li>
+                <li><i class="fas fa-chart-pie"></i><a href="budget/index.html">Budget</a></li>
+                <li><i class="fas fa-gift"></i><a href="rewards/index.html">Rewards</a></li>
+                <li><i class="fas fa-chart-line"></i><a href="investing/index.html">Investing & Education</a></li>
+                <li><a href="/investing/courses.html"><i class="fas fa-chart-line"></i> Courses</a></li>
+                <li><i class="fas fa-calculator"></i><a href="splittrack/index.html">SplitTrack</a></li>
+            </ul>
+            <div class="account-widget">
+                <div class="account-info">
+                    <div class="avatar">
+                        <span>AK</span>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Alex Kim</p>
+                        <p class="user-email">alex.k@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="dashboard">
+            <div class="dashboard-header">
+                <h2>Welcome back, Alex!</h2>
+                <div class="balance-card">
+                    <span class="label">Total Balance</span>
+                    <span class="amount">$10,542.35</span>
+                    <span class="trend positive">+15.3% <i class="fas fa-arrow-up"></i></span>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Budget Overview</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <a href="budget/index.html"><div class="pie-chart-container">
+                        <img src="img/pieChart.png" alt="Pie Chart" class="chart-image">
+                    </div></a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Financial Health</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="pie-chart-container">
+                        <img src="img/healthChart.png" alt="Financial Health Chart" class="chart-image">
+                    </div>
+                    <div class="healthTxt">
+                    </div>
+                </div>
+
+            <div class="bottom-grid">
+                <div class="card quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button><i class="fas fa-plus"></i> Add Transaction</button>
+                        <button><i class="fas fa-exchange-alt"></i> Transfer</button>
+                        <button><i class="fas fa-file-invoice"></i> Pay Bills</button>
+                    </div>
+                </div>
+
+                <div class="card latest-tips">
+                    <h3>Financial Tips</h3>
+                    <div class="tips-list">
+                        <a href="blog/index.html" class="tip-item">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Blog Homepage</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="blog/blawg1.html" class="tip-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Investment Strategies</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <a href="blog/blawg1.html" class="tip-item">
+                            <i class="fas fa-piggy-bank"></i>
+                            <span>Budgeting Tips</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="config.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
